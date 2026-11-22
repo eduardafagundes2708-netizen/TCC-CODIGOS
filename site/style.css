@@ -1,0 +1,347 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+body { background:#fdfaf6; color:#111; line-height:1.6; }
+
+/* ACESSIBILIDADE */
+.acessibilidade { position:fixed; top:90px; right:15px; z-index:999; }
+#btnAcessibilidade { background:#0307ee; border:none; padding:10px 14px; border-radius:30px; cursor:pointer; font-weight:bold; }
+.menu-acessibilidade { background:#3e3bf3; border:1px solid #8d7afa; border-radius:12px; margin-top:8px; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,.15); }
+.menu-acessibilidade button { border:none; background:none; padding:10px; text-align:left; cursor:pointer; }
+.menu-acessibilidade button:hover { background:#f0f0f0; }
+.escondido { display:none; }
+body.alto-contraste { background:#000 !important; color:#05011f !important; }
+body.alto-contraste .topo, body.alto-contraste .cartao { background:#05011f !important; color:#fff !important; border:1px solid #fff; }
+body.alto-contraste a { color:#ffff00 !important; }
+
+/* TOPO */
+.topo { display:flex; justify-content:space-between; align-items:center; padding:16px 30px; background:#f12e2e; position:sticky; top:0; }
+.marca { display:flex; align-items:center; gap:10px; text-decoration:none; color:#e73535; font-weight:bold; }
+.marca-simbolo { width:32px; height:32px; background:#ff2028; border-radius:50%; display:block; }
+
+/* INÍCIO COM FOTO */
+.inicio { display:flex; align-items:center; gap:30px; padding:50px 30px; }
+.inicio-texto { flex:1; }
+.inicio-texto h1 { font-size:44px; line-height:1.1; margin:12px 0; }
+.inicio-imagem { flex:1; }
+.inicio-imagem img { width:100%; height:420px; object-fit:cover; border-radius:18px; display:block; }
+.botoes-inicio { display:flex; gap:12px; margin-top:20px; }
+.botao { padding:12px 20px; border-radius:30px; text-decoration:none; display:inline-block; font-size:14px; }
+.botao-escuro { background:#dd5656; color:#fff; }
+
+.botao-claro { background:#fff; color:#111; }
+
+/* FAIXA / SOBRE / ATIVIDADES */
+.faixa { background:#f8f400; padding:30px; }
+.secao { padding:55px 30px; }
+.sobre { display:flex; gap:30px; align-items:center; }
+.sobre-conteudo { flex:1; }
+.sobre-conteudo h4 { font-size:32px; margin-bottom:12px; }
+.informacoes { display:flex; gap:30px; margin-top:20px; }
+.cartoes { display:flex; gap:15px; margin-top:25px; }
+.cartao { background:#ebf55c; border:1px solid #e1f05f; padding:22px; border-radius:14px; flex:1; }
+.icone { font-size:26px; margin-bottom:10px; }
+
+/* FOTO OCUPANDO 100% DA TELA */
+.hero-full {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ocupa a altura toda da tela */
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.foto-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* estica sem distorcer, corta só as bordas */
+  object-position: center;
+  z-index: 1;
+}
+
+/* Sombra escura por cima da foto pra ler o texto */
+.hero-full::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.20) 60%, rgba(0,0,0,0.10) 100%);
+  z-index: 2;
+}
+
+.texto-por-cima {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  max-width: 600px;
+}
+
+.texto-por-cima h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin: 12px 0;
+}
+
+.texto-por-cima .sobretitulo { color: #fff; }
+.texto-por-cima p { color: #f0f0f0; }
+
+/* Botões brancos por cima da foto */
+.texto-por-cima .botao-escuro { background: #fff; color: #111; }
+.texto-por-cima .botao-borda { border: 1px solid #fff; color: #fff; }
+
+@media (max-width: 768px) {
+  .hero-full { height: 90vh; padding: 0 20px; }
+  .texto-por-cima h1 { font-size: 32px; }
+}
+/* CHAMADA / GALERIA / CONTATO */
+.chamada { background:#5b4a5a; color:#fff; text-align:center; padding:60px 30px; }
+.chamada h2 { font-size:36px; margin:12px 0; }
+.galeria-grade { display:flex; gap:15px; margin-top:20px; }
+.galeria-item { flex:1; height:200px; background:#ddd; border-radius:14px; display:flex; align-items:flex-end; padding:15px; font-weight:bold; }
+.contato { background:#111; color:#fff; padding:50px 30px; display:flex; justify-content:space-between; }
+.rodape { display:flex; justify-content:space-between; padding:20px 30px; font-size:13px; }
+
+@media (max-width:768px){
+  .topo, .inicio, .sobre, .cartoes, .contato, .rodape { flex-direction:column; text-align:center; }
+  .inicio-texto h1 { font-size:30px; }
+  .inicio-imagem img, .sobre-imagem img { height:260px; }
+  .galeria-grade { flex-direction:column; }
+  .acessibilidade { top:auto; bottom:15px; }
+}
+/* TEXTO POR CIMA DA FOTO */
+.texto-por-cima {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  max-width: 600px;
+}
+
+.texto-por-cima h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 18px; /* espaço entre título e botão */
+}
+
+/* BOTÃO SAIBA MAIS EMBAIXO DO TÍTULO */
+.botao-saiba {
+  display: inline-block;
+  margin-bottom: 18px; /* espaço entre botão e texto pequeno */
+}
+
+.texto-pequeno {
+  color: #f0f0f0;
+  font-size: 16px;
+  max-width: 500px;
+}
+
+/* PÁGINA SAIBA MAIS */
+.pagina-saiba {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+.pagina-saiba h1 { font-size: 36px; margin-bottom: 20px; }
+.pagina-saiba p { margin-bottom: 14px; line-height: 1.6; }
+/* CABEÇALHO TUDO NA MESMA RETA */
+.topo {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100%;
+  height: 70px;
+  padding: 0 20px !important;
+  background: #fff;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+/* LOGO NA ESQUERDA */
+.marca, .marca-logo {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.marca-logo::before,
+.marca-logo::after {
+  display: none !important;
+  content: none !important;
+}
+
+.logo-grupo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* MENU NA DIREITA, NA MESMA LINHA */
+.menu {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 22px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* BOTÃO CONTATO */
+.menu .botao-contato {
+  background: #000;
+  color: #fff !important;
+  padding: 9px 18px;
+  border-radius: 999px;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+  .topo {
+    height: 60px;
+    padding: 0 12px !important;
+  }
+  .logo-grupo {
+    height: 40px;
+  }
+  .menu {
+    gap: 12px;
+  }
+  .menu a {
+    font-size: 14px;
+  }
+  .menu .botao-contato {
+    padding: 7px 12px;
+  }
+}
+/* FOTO DENTRO DA IMAGEM GRANDE - SEM CORTAR */
+.fundo-saiba,
+.hero,
+.imagem-grande {
+  position: relative !important;
+  width: 100% !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  overflow: hidden !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: #000 !important;
+  padding: 0 !important;
+}
+
+/* A FOTO FICA DENTRO, NÃO ESTOURA */
+.fundo-saiba .foto-fundo,
+.hero .foto-fundo,
+.imagem-grande img {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important; /* dentro, sem cortar */
+  object-position: center !important;
+  z-index: 1 !important;
+}
+
+/* SE QUISER QUE PREENCHA TUDO SEM BORDA PRETA, TROCA contain POR cover */
+/* object-fit: cover !important; */
+
+/* TEXTO E MENU POR CIMA DA FOTO */
+.conteudo-saiba,
+.texto-em-cima {
+  position: relative !important;
+  z-index: 3 !important;
+  background: transparent !important;
+  max-width: 750px !important;
+  width: 100% !important;
+  padding: 20px !important;
+  color: #fff !important;
+}
+
+.topo-sobre-foto,
+.topo {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 70px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent) !important;
+  z-index: 100 !important;
+}
+
+.logo-grupo {
+  height: 55px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+/* EFEITO BOLINHA QUE ANDA NO MENU */
+.topo .menu {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.topo .menu a {
+  position: relative !important;
+  padding: 9px 18px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  color: #111 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* QUANDO CLICA, FICA A BOLINHA / PÍLULA */
+.topo .menu a.ativo {
+  background: #1ff103 !important;
+  color: #96f826 !important;
+  box-shadow: 0 4px 12px #7bd66f(85, 245, 10, 0.25) !important;
+  transform: scale(1.05) !important;
+}
+
+/* CONTATO JÁ TEM BOLINHA, QUANDO ATIVO FICA BRANCO */
+.topo .menu a.botao-contato.ativo {
+  background: #db0b0b !important;
+  color: #eb5e5e !important;
+  outline: 2px solid #f1bbbb !important;
+}
+
+/* QUANDO PASSA O MOUSE, DÁ UMA PRÉVIA DA BOLINHA */
+.topo .menu a:hover {
+  background: rgba(230, 145, 19, 0.08) !important;
+}
+.topo .menu a.ativo:hover {
+  background: #e78607 !important;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+  .topo .menu a {
+    padding: 7px 12px !important;
+    font-size: 14px !important;
+  }
+}

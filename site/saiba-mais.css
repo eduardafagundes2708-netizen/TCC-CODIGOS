@@ -1,0 +1,238 @@
+/* ORGANIZAÇÃO DOS BOTÕES */
+.botoes-inicio {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+
+.linha-botoes {
+  display: flex;
+  gap: 12px;
+}
+
+/* BOTÃO SAIBA MAIS - EMBAIXO DO CONHEÇA NOSSO GRUPO */
+.botao-saiba-mais {
+  background: #c1272d; /* vermelho da Brazil Estrangeiro */
+  color: #fff !important;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.botao-saiba-mais:hover {
+  background: #a01e23;
+  transform: scale(1.05);
+}/* PÁGINA SAIBA MAIS COM FOTO DE FUNDO IGUAL AO COMEÇO */
+.fundo-saiba {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* usa a tela toda */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 50px;
+  overflow: hidden;
+}
+
+.fundo-saiba .foto-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* preenche tudo sem distorcer */
+  object-position: center;
+  z-index: 1;
+}
+
+/* Sombra escura por cima da foto pra ler o texto */
+.fundo-saiba::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.62);
+  z-index: 2;
+}
+
+/* CAIXA DO TEXTO POR CIMA DA FOTO */
+.conteudo-saiba {
+  position: relative;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.96);
+  color: #111;
+  max-width: 750px;
+  width: 100%;
+  padding: 35px;
+  border-radius: 18px;
+}
+
+.conteudo-saiba h1 {
+  font-size: 38px;
+  line-height: 1.1;
+  margin-bottom: 22px;
+}
+
+.conteudo-saiba p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+/* Menu da página Saiba Mais em cima da foto */
+.topo-saiba {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 768px) {
+  .conteudo-saiba { padding: 22px; }
+  .conteudo-saiba h1 { font-size: 28px; }
+}/* PÁGINA SAIBA MAIS COM FOTO DE FUNDO IGUAL AO COMEÇO */
+.fundo-saiba {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* usa a tela toda */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 50px;
+  overflow: hidden;
+}
+
+.fundo-saiba .foto-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* preenche tudo sem distorcer */
+  object-position: center;
+  z-index: 1;
+}
+
+/* ========================================= */
+/* PÁGINA SAIBA MAIS - TEXTO EM CIMA DA FOTO */
+/* ========================================= */
+
+/* Zera o branco da página */
+body {
+  margin: 0;
+  background: #000;
+}
+
+/* Container da página */
+.fundo-saiba {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 110px 20px 60px;
+}
+
+/* FOTO FIXA ATRÁS DE TUDO - TELA TODA */
+.fundo-saiba .foto-fundo {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  z-index: -2 !important;
+  display: block !important;
+}
+
+/* SOMBRA ESCURA POR CIMA DA FOTO PRA LER O TEXTO */
+.fundo-saiba::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+}
+
+/* TEXTO EM CIMA DA IMAGEM - SEM CAIXA BRANCA */
+.conteudo-saiba,
+.texto-em-cima {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+  max-width: 750px;
+  width: 100%;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #fff;
+}
+
+.conteudo-saiba h1,
+.texto-em-cima h1 {
+  color: #fff !important;
+  font-size: 42px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.conteudo-saiba p,
+.texto-em-cima p {
+  color: #fff !important;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+.conteudo-saiba strong,
+.texto-em-cima strong {
+  color: #fff !important;
+}
+
+/* BOTÃO VOLTAR EM CIMA DA FOTO */
+.texto-em-cima .botao-escuro,
+.conteudo-saiba .botao-escuro {
+  background: #fff;
+  color: #000 !important;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* MENU EM CIMA DA FOTO */
+.topo-saiba {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+  .conteudo-saiba, .texto-em-cima { padding: 0 5px !important; }
+  .conteudo-saiba h1, .texto-em-cima h1 { font-size: 28px; }
+  .conteudo-saiba p, .texto-em-cima p { font-size: 16px; }
+}
